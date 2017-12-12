@@ -10,13 +10,28 @@
 <link rel="stylesheet" href="styles/styles.css">
 
 <!-- CLIENT SIDE -->
+<script src="vendors/angular.min.js"></script>
 <script type="text/javascript" src="scripts/client.js"></script>
 
 
 
 
 </head>
-<body>
+<body ng-app="HootieApp" ng-controller="PeopleController as vm">
     <h1>HOOTIE WHO?</h1>
+    <form>
+        <div>
+            <label for="person">Person</label>
+            <input type="text" ng-model="vm.newPerson.name">
+        </div>
+        <div>
+                <label for="personImage">Image URL</label>
+                <input type="url" ng-model="vm.newPerson.image">
+        </div>
+        <button id="addButton" ng-click="vm.postPerson()">Add New Person</button>
+    </form>
+
+
+
 </body>
 </html>
